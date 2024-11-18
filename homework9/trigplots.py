@@ -10,18 +10,29 @@ def trig_plots_horizontal():
     # Define functions h(x) and k(x) 
     h_x = np.cos(x)
     k_x = np.sin(x)
+
+    """
+    Make two subplots horizontally beside each other by making 1 row and 2 columns.
+    """
     
     # Create a figure and two subplots
     fig, axs = plt.subplots(1, 2, figsize=(12, 6))  # 1 row, 2 columns
+
+    """
+    It is important to have fig, axs here, because we want subplots--
+    meaning we want two figures (axs) in one big figure (fig).
+
+    So, when we adjust the title, tables, etc. of the subplots, we use axs.
+    """
     
-    # Left subplot
+    # Left subplot, title, labels
     axs[0].plot(x, h_x, label=r"$h(x) = \cos(x)$", color='blue')
     axs[0].set_title(r"$h(x) = \cos(x)$")
     axs[0].set_xlabel("x")
     axs[0].set_ylabel("h(x)")
     axs[0].legend()
     
-    # Right subplot
+    # Right subplot, title, labels
     axs[1].plot(x, k_x, label=r"$k(x) = \sin(x)$", color='green')
     axs[1].set_title(r"$k(x) = \sin(x)$")
     axs[1].set_xlabel("x")
@@ -42,18 +53,22 @@ def trig_plots_vertical():
     # Define the functions
     h_x = np.cos(x)
     k_x = np.sin(x)
+
+    """
+    Make the two subplots vertically stacked by creating 2 rows and 1 column.
+    """
     
     # Create a figure and two subplots
     fig, axs = plt.subplots(2, 1, figsize=(12, 6))  # 2 rows, 1 column
     
-    # Top subplot
+    # Top subplot, title, labels
     axs[0].plot(x, h_x, label=r"$h(x) = \cos(x)$", color='blue')
     axs[0].set_title(r"$h(x) = \cos(x)$")
     axs[0].set_xlabel("x")
     axs[0].set_ylabel("h(x)")
     axs[0].legend()
     
-    # Bottom subplot
+    # Bottom subplot, title, labels
     axs[1].plot(x, k_x, label=r"$k(x) = \sin(x)$", color='green')
     axs[1].set_title(r"$k(x) = \sin(x)$")
     axs[1].set_xlabel("x")
@@ -79,23 +94,26 @@ def expanded_domain_horizontal():
     h_x = np.cos(x)
     k_x = np.sin(x)
     
-    # Create a figure and two subplots
+    # Create a figure and two subplots, same as above
     fig, axs = plt.subplots(1, 2, figsize=(12, 6))  # 1 row, 2 columns
     
-    # Left subplot
+    # Left subplot, title, labels
     axs[0].plot(x, h_x, label=r"$h(x) = \cos(x)$", color='blue')
     axs[0].set_title(r"$h(x) = \cos(x)$")
     axs[0].set_xlabel("x")
     axs[0].set_ylabel("h(x)")
     axs[0].legend()
     
-    # Right subplot
+    # Right subplot, title, labels
     axs[1].plot(x, k_x, label=r"$k(x) = \sin(x)$", color='green')
     axs[1].set_title(r"$k(x) = \sin(x)$")
     axs[1].set_xlabel("x")
     axs[1].set_ylabel("k(x)")
     axs[1].legend()
-    
+
+    """
+    Adjust the domain to end at 4pi to change the x-axis.
+    """
     # Set domain from 0 to 4π
     axs[0].set_xlim(0, 4 * np.pi)
     axs[1].set_xlim(0, 4 * np.pi)
