@@ -1,6 +1,8 @@
 import numpy as np
 import time
 
+def orbital_period(a):
+    return (a**3)**0.5
 
 def orbital_period_timer(a):
     start = time.time() # Begin timer
